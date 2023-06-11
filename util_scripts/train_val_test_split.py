@@ -44,9 +44,9 @@ for i in range(train_num):
     fn = move_me.name
     base_fn = move_me.stem
     parent_path = move_me.parent
-    xml_fn = base_fn + '.xml'
+    json_fn = base_fn + '.json'
     os.rename(move_me, train_path+'/'+fn)
-    os.rename(os.path.join(parent_path,xml_fn),os.path.join(train_path,xml_fn))
+    os.rename(os.path.join(parent_path,json_fn),os.path.join(train_path,json_fn))
     file_list.remove(move_me)
 
 # Select 10% of remaining files and move them to validation folder
@@ -55,9 +55,9 @@ for i in range(val_num):
     fn = move_me.name
     base_fn = move_me.stem
     parent_path = move_me.parent
-    xml_fn = base_fn + '.xml'
+    json_fn = base_fn + '.json'
     os.rename(move_me, val_path+'/'+fn)
-    os.rename(os.path.join(parent_path,xml_fn),os.path.join(val_path,xml_fn))
+    os.rename(os.path.join(parent_path,json_fn),os.path.join(val_path,json_fn))
     file_list.remove(move_me)
 
 # Move remaining files to test folder
@@ -66,7 +66,7 @@ for i in range(test_num):
     fn = move_me.name
     base_fn = move_me.stem
     parent_path = move_me.parent
-    xml_fn = base_fn + '.xml'
+    json_fn = base_fn + '.json'
     os.rename(move_me, test_path+'/'+fn)
-    os.rename(os.path.join(parent_path,xml_fn),os.path.join(test_path,xml_fn))
+    os.rename(os.path.join(parent_path,json_fn),os.path.join(test_path,json_fn))
     file_list.remove(move_me)
